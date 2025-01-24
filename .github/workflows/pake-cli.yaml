@@ -5,11 +5,11 @@ on:
       platform:
         description: 'Platform'
         required: true
-        default: 'macos-latest'
+        default: 'macos-13'
         type: choice
         options:
           - 'windows-latest'
-          - 'macos-latest'
+          - 'macos-13'
           - 'ubuntu-20.04'
       url:
         description: 'URL'
@@ -83,8 +83,8 @@ jobs:
           toolchain: stable-x86_64-msvc
           target: x86_64-pc-windows-msvc
 
-      - name: Install Rust for macos-latest
-        if: inputs.platform == 'macos-latest'
+      - name: Install Rust for macos-13
+        if: inputs.platform == 'macos-13'
         uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
